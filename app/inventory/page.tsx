@@ -49,13 +49,13 @@ export default function Inventory() {
         body {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
           color: #e0e0e0;
-          background: #0d1b2a;
+          background: #0b1622;
           line-height: 1.6;
         }
 
-        /* HEADER */
+        /* HEADER & NAVIGATION */
         header {
-          background: rgba(13, 27, 42, 0.95);
+          background: rgba(11, 22, 34, 0.95);
           backdrop-filter: blur(10px);
           border-bottom: 1px solid rgba(255, 107, 53, 0.1);
           position: sticky;
@@ -64,16 +64,16 @@ export default function Inventory() {
         }
 
         nav {
-          max-width: 1400px;
+          max-width: 1280px;
           margin: 0 auto;
-          padding: 1.25rem 2rem;
+          padding: 1rem 2rem;
           display: flex;
           justify-content: space-between;
           align-items: center;
         }
 
         .logo {
-          font-size: 1.4rem;
+          font-size: 1.3rem;
           font-weight: 700;
           color: #ffffff;
           text-decoration: none;
@@ -87,13 +87,13 @@ export default function Inventory() {
         nav ul {
           list-style: none;
           display: flex;
-          gap: 2.5rem;
+          gap: 2rem;
         }
 
         nav a {
           text-decoration: none;
           color: #b0b0b0;
-          font-size: 0.9rem;
+          font-size: 0.85rem;
           font-weight: 500;
           letter-spacing: 0.3px;
           transition: all 0.3s ease;
@@ -106,7 +106,7 @@ export default function Inventory() {
           bottom: -4px;
           left: 0;
           width: 0;
-          height: 2px;
+          height: 1px;
           background: #ff6b35;
           transition: width 0.3s ease;
         }
@@ -121,88 +121,89 @@ export default function Inventory() {
 
         /* PAGE HEADER */
         .page-header {
-          background: linear-gradient(135deg, #1a3a52 0%, #0d1b2a 100%);
-          padding: 4.5rem 2rem;
+          background: linear-gradient(180deg, rgba(11, 22, 34, 1) 0%, rgba(13, 27, 42, 1) 100%);
+          padding: 3rem 2rem;
           text-align: center;
-          border-bottom: 1px solid rgba(255, 107, 53, 0.1);
+          border-bottom: 1px solid rgba(255, 107, 53, 0.05);
         }
 
         .page-header h1 {
-          font-size: 2.8rem;
-          font-weight: 700;
+          font-size: 2.2rem;
+          font-weight: 300;
           color: #ffffff;
-          margin-bottom: 0.75rem;
+          margin-bottom: 0.5rem;
           letter-spacing: -0.5px;
         }
 
         .page-header p {
-          color: #b0b0b0;
-          font-size: 1.05rem;
+          color: #8899a6;
+          font-size: 0.95rem;
           font-weight: 300;
+          letter-spacing: 0.5px;
         }
 
         /* MAIN */
         main {
-          max-width: 1400px;
+          max-width: 1280px;
           margin: 0 auto;
-          padding: 3rem 2rem;
+          padding: 2rem;
         }
 
         .inventory-container {
           display: flex;
-          gap: 3rem;
+          gap: 2rem;
+          align-items: flex-start;
         }
 
         /* FILTERS */
         .filters {
-          width: 280px;
-          background: rgba(26, 58, 82, 0.3);
-          border: 1px solid rgba(255, 107, 53, 0.15);
-          padding: 2.5rem;
-          border-radius: 12px;
+          width: 260px;
+          background: rgba(13, 27, 42, 0.4);
+          border-right: 1px solid rgba(255, 255, 255, 0.05);
+          padding-right: 2rem;
           height: fit-content;
           position: sticky;
-          top: 100px;
+          top: 90px;
         }
 
         .filters h3 {
-          font-size: 1.15rem;
-          font-weight: 700;
+          font-size: 0.95rem;
+          font-weight: 600;
           color: #ffffff;
-          margin-bottom: 2rem;
-          letter-spacing: 0.3px;
+          margin-bottom: 1.5rem;
+          letter-spacing: 1px;
+          text-transform: uppercase;
         }
 
         .filter-group {
-          margin-bottom: 2rem;
+          margin-bottom: 1.5rem;
         }
 
         .filter-group label {
           display: block;
-          font-size: 0.85rem;
-          font-weight: 600;
-          color: #ff6b35;
-          margin-bottom: 0.75rem;
-          letter-spacing: 0.2px;
+          font-size: 0.8rem;
+          font-weight: 500;
+          color: #8899a6;
+          margin-bottom: 0.5rem;
+          letter-spacing: 0.5px;
         }
 
         .filter-group select {
           width: 100%;
-          padding: 0.7rem 0.85rem;
-          border: 1px solid rgba(255, 107, 53, 0.2);
-          border-radius: 6px;
-          font-size: 0.9rem;
-          background: rgba(13, 27, 42, 0.5);
+          padding: 0.6rem 0.75rem;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 4px;
+          font-size: 0.85rem;
+          background: rgba(11, 22, 34, 0.6);
           color: #e0e0e0;
           cursor: pointer;
-          transition: all 0.3s ease;
+          transition: all 0.2s ease;
         }
 
         .filter-group select:focus {
           outline: none;
           border-color: #ff6b35;
-          background: rgba(26, 58, 82, 0.4);
-          box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+          background: rgba(13, 27, 42, 0.8);
         }
 
         /* VEHICLES SECTION */
@@ -212,17 +213,17 @@ export default function Inventory() {
 
         .vehicles-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-          gap: 2.5rem;
-          margin-bottom: 3.5rem;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          gap: 1.5rem;
+          margin-bottom: 3rem;
+          justify-content: center;
         }
 
         .vehicle-card {
-          background: rgba(26, 58, 82, 0.4);
-          border: 1px solid rgba(255, 107, 53, 0.2);
-          border-radius: 12px;
+          background: #0d1b2a;
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          border-radius: 4px;
           overflow: hidden;
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
           transition: all 0.3s ease;
           text-decoration: none;
           color: inherit;
@@ -230,129 +231,165 @@ export default function Inventory() {
           position: relative;
         }
 
-        .vehicle-card::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, transparent 100%);
-          opacity: 0;
-          transition: opacity 0.3s ease;
-          z-index: 1;
-          pointer-events: none;
-        }
-
         .vehicle-card:hover {
-          transform: translateY(-8px);
-          border-color: rgba(255, 107, 53, 0.5);
-          box-shadow: 0 16px 48px rgba(255, 107, 53, 0.2);
-        }
-
-        .vehicle-card:hover::before {
-          opacity: 1;
+          transform: translateY(-4px);
+          border-color: rgba(255, 107, 53, 0.3);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .vehicle-image {
           width: 100%;
-          height: 240px;
-          background: linear-gradient(135deg, #1a3a52 0%, #0d1b2a 100%);
+          height: 200px;
+          background: #0b1622;
           display: flex;
           align-items: center;
           justify-content: center;
-          color: #666;
-          font-size: 0.85rem;
-          border-bottom: 1px solid rgba(255, 107, 53, 0.1);
+          position: relative;
+          overflow: hidden;
+        }
+        
+        .vehicle-image img {
+          transition: transform 0.5s ease;
+        }
+
+        .vehicle-card:hover .vehicle-image img {
+          transform: scale(1.05);
         }
 
         .vehicle-info {
-          padding: 2.5rem 2rem;
-          position: relative;
-          z-index: 2;
+          padding: 1.5rem;
         }
 
         .vehicle-model {
-          font-size: 1.3rem;
-          font-weight: 600;
+          font-size: 1.1rem;
+          font-weight: 500;
           color: #ffffff;
-          margin-bottom: 0.75rem;
-          letter-spacing: -0.3px;
+          margin-bottom: 0.5rem;
+          letter-spacing: -0.2px;
         }
 
         .vehicle-price {
-          font-size: 1.8rem;
-          font-weight: 700;
-          background: linear-gradient(135deg, #ff6b35 0%, #ff8c5a 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          margin-bottom: 1rem;
+          font-size: 1.4rem;
+          font-weight: 600;
+          color: #ff6b35;
+          margin-bottom: 0.75rem;
         }
 
         .vehicle-details {
-          font-size: 0.9rem;
-          color: #909090;
-          line-height: 1.8;
+          font-size: 0.85rem;
+          color: #8899a6;
+          line-height: 1.6;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.75rem;
+        }
+        
+        .vehicle-details div {
+          display: flex;
+          align-items: center;
+        }
+        
+        .vehicle-details div::before {
+          content: '•';
+          margin-right: 0.5rem;
+          color: #ff6b35;
+          opacity: 0.7;
+        }
+        
+        .vehicle-details div:first-child::before {
+          display: none;
         }
 
         /* PAGINATION */
         .pagination {
           display: flex;
           justify-content: center;
-          gap: 0.75rem;
+          gap: 0.5rem;
           align-items: center;
+          margin-top: 4rem;
         }
 
         .pagination button,
         .pagination span {
-          padding: 0.7rem 0.95rem;
-          border: 1px solid rgba(255, 107, 53, 0.2);
-          background: rgba(26, 58, 82, 0.3);
-          color: #e0e0e0;
-          border-radius: 6px;
+          padding: 0.5rem 1rem;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          background: transparent;
+          color: #8899a6;
+          border-radius: 2px;
           cursor: pointer;
-          font-weight: 600;
-          font-size: 0.85rem;
-          transition: all 0.3s ease;
+          font-weight: 500;
+          font-size: 0.8rem;
+          transition: all 0.2s ease;
         }
 
         .pagination button:hover {
-          background: rgba(255, 107, 53, 0.2);
-          border-color: #ff6b35;
-          color: #ff6b35;
+          background: rgba(255, 255, 255, 0.05);
+          color: #ffffff;
         }
 
         .pagination span.active {
-          background: linear-gradient(135deg, #ff6b35 0%, #ff8c5a 100%);
+          background: #ff6b35;
           color: #ffffff;
           border-color: #ff6b35;
         }
 
         /* FOOTER */
         footer {
-          background: rgba(13, 27, 42, 0.95);
-          color: #b0b0b0;
-          padding: 3rem 2rem;
-          text-align: center;
-          font-size: 0.85rem;
-          margin-top: 3rem;
-          border-top: 1px solid rgba(255, 107, 53, 0.1);
+          background: #0b1622;
+          border-top: 1px solid rgba(255, 255, 255, 0.05);
+          padding: 4rem 2rem 2rem;
+          color: #8899a6;
+          font-size: 0.9rem;
+          margin-top: auto;
         }
 
-        footer a {
-          color: #ff6b35;
+        .footer-content {
+          max-width: 1280px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 3rem;
+          margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+          color: #ffffff;
+          font-size: 1.1rem;
+          font-weight: 600;
+          margin-bottom: 1.5rem;
+          letter-spacing: -0.2px;
+        }
+
+        .footer-col ul {
+          list-style: none;
+        }
+
+        .footer-col ul li {
+          margin-bottom: 0.8rem;
+        }
+
+        .footer-col a {
+          color: #8899a6;
           text-decoration: none;
-          margin: 0 1.5rem;
-          transition: color 0.3s ease;
+          transition: color 0.2s ease;
         }
 
-        footer a:hover {
-          color: #ff8c5a;
+        .footer-col a:hover {
+          color: #ff6b35;
+        }
+
+        .footer-bottom {
+          max-width: 1280px;
+          margin: 0 auto;
+          padding-top: 2rem;
+          border-top: 1px solid rgba(255, 255, 255, 0.05);
+          text-align: center;
+          font-size: 0.8rem;
+          color: #5d707f;
         }
 
         /* RESPONSIVE */
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
           .inventory-container {
             flex-direction: column;
           }
@@ -360,54 +397,73 @@ export default function Inventory() {
           .filters {
             width: 100%;
             position: static;
+            border-right: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-right: 0;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+          }
+          
+          .filter-group {
+            display: inline-block;
+            width: 32%;
+            margin-right: 1%;
+            margin-bottom: 1rem;
+            vertical-align: top;
           }
 
           .vehicles-grid {
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+          }
+        }
+
+        @media (max-width: 768px) {
+          .filter-group {
+            width: 48%;
+          }
+        }
+
+        @media (max-width: 600px) {
+          nav {
+            padding: 1rem;
+            flex-direction: column;
+            gap: 1rem;
+          }
+
+          .logo {
+            font-size: 1.25rem;
           }
 
           nav ul {
             gap: 1.5rem;
+            font-size: 0.9rem;
           }
 
-          nav a {
-            font-size: 0.85rem;
-          }
-        }
-
-        @media (max-width: 480px) {
-          nav {
-            padding: 1rem;
-          }
-
-          .logo {
-            font-size: 1.1rem;
-          }
-
-          nav ul {
-            gap: 1rem;
-            font-size: 0.8rem;
+          .page-header {
+            padding: 3rem 1.5rem;
           }
 
           .page-header h1 {
             font-size: 1.8rem;
           }
-
-          .page-header p {
-            font-size: 0.95rem;
-          }
-
-          main {
-            padding: 1.5rem;
+          
+          .filter-group {
+            width: 100%;
+            margin-right: 0;
+            display: block;
           }
 
           .vehicles-grid {
             grid-template-columns: 1fr;
           }
+          
+          main {
+            padding: 1.5rem 1rem;
+          }
 
-          .pagination {
-            flex-wrap: wrap;
-            gap: 0.5rem;
+          .footer-content {
+            grid-template-columns: 1fr;
+            gap: 2rem;
           }
         }
       `}</style>
@@ -415,14 +471,14 @@ export default function Inventory() {
       <header>
         <nav>
           <a href="/" className="logo">
-            DriveLine
+            DriveLine Motors
           </a>
           <ul>
             <li>
               <a href="/">Home</a>
             </li>
             <li>
-              <a href="/inventory">Inventory</a>
+              <a href="/inventory">Collection</a>
             </li>
             <li>
               <a href="/contact">Contact</a>
@@ -432,18 +488,18 @@ export default function Inventory() {
       </header>
 
       <div className="page-header">
-        <h1>Our Inventory</h1>
-        <p>Discover premium vehicles curated for discerning buyers</p>
+        <h1>Our Collection</h1>
+        <p>Curated excellence for the discerning driver</p>
       </div>
 
       <main>
         <div className="inventory-container">
           <aside className="filters">
-            <h3>Filters</h3>
+            <h3>Refine Search</h3>
             <div className="filter-group">
               <label htmlFor="price">Price Range</label>
               <select id="price">
-                <option>All Prices</option>
+                <option>All Ranges</option>
                 <option>Under $30,000</option>
                 <option>$30,000 - $50,000</option>
                 <option>$50,000 - $75,000</option>
@@ -454,7 +510,7 @@ export default function Inventory() {
             <div className="filter-group">
               <label htmlFor="year">Year</label>
               <select id="year">
-                <option>All Years</option>
+                <option>Any Year</option>
                 <option>2023 & Newer</option>
                 <option>2021 - 2023</option>
                 <option>2018 - 2021</option>
@@ -463,9 +519,9 @@ export default function Inventory() {
             </div>
 
             <div className="filter-group">
-              <label htmlFor="type">Vehicle Type</label>
+              <label htmlFor="type">Body Style</label>
               <select id="type">
-                <option>All Types</option>
+                <option>All Styles</option>
                 <option>Sedan</option>
                 <option>SUV</option>
                 <option>Coupe</option>
@@ -476,7 +532,7 @@ export default function Inventory() {
             <div className="filter-group">
               <label htmlFor="fuel">Fuel Type</label>
               <select id="fuel">
-                <option>All Types</option>
+                <option>Any Fuel</option>
                 <option>Electric</option>
                 <option>Hybrid</option>
                 <option>Gasoline</option>
@@ -500,16 +556,16 @@ export default function Inventory() {
                           : "test.jpg"
                       }
                       alt={vehicle.name}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     />
                   </div>
                   <div className="vehicle-info">
                     <div className="vehicle-model">{vehicle.name}</div>
                     <div className="vehicle-price">{vehicle.price}</div>
                     <div className="vehicle-details">
-                      <div>• {vehicle.miles} km</div>
-                      <div>• {vehicle.type}</div>
-                      <div>• {vehicle.info}</div>
+                      <div>{vehicle.miles} km</div>
+                      <div>{vehicle.type}</div>
+                      <div>{vehicle.info}</div>
                     </div>
                   </div>
                 </a>
@@ -528,10 +584,43 @@ export default function Inventory() {
       </main>
 
       <footer>
-        <p>
-          &copy; 2025 DriveLine Motors. All rights reserved. | <a href="/">Home</a> <a href="/inventory">Inventory</a>{" "}
-          <a href="/contact">Contact</a>
-        </p>
+        <div className="footer-content">
+          <div className="footer-col">
+            <h4>DriveLine Motors</h4>
+            <p>
+              Premier destination for luxury and performance vehicles. 
+              Experience excellence in every mile.
+            </p>
+          </div>
+          <div className="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/inventory">Collection</a></li>
+              <li><a href="/contact">Contact Us</a></li>
+            </ul>
+          </div>
+          <div className="footer-col">
+            <h4>Contact</h4>
+            <ul>
+              <li>127 Riawena Rd</li>
+              <li>Salisbury, QLD 4107</li>
+              <li>(07) 3520 4080</li>
+              <li>hello@driveline-motors.com</li>
+            </ul>
+          </div>
+          <div className="footer-col">
+            <h4>Hours</h4>
+            <ul>
+              <li>Mon - Fri: 9am - 6pm</li>
+              <li>Sat: 10am - 5pm</li>
+              <li>Sun: Closed</li>
+            </ul>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          &copy; 2025 DriveLine Motors. All rights reserved.
+        </div>
       </footer>
     </>
   )

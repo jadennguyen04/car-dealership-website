@@ -1,5 +1,7 @@
 "use client"
 
+import { MapPin, Phone, Clock, Mail, Send } from "lucide-react"
+
 export default function Contact() {
   return (
     <>
@@ -13,13 +15,13 @@ export default function Contact() {
         body {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
           color: #e0e0e0;
-          background: #0d1b2a;
+          background: #0b1622;
           line-height: 1.6;
         }
 
         /* HEADER */
         header {
-          background: rgba(13, 27, 42, 0.95);
+          background: rgba(11, 22, 34, 0.95);
           backdrop-filter: blur(10px);
           border-bottom: 1px solid rgba(255, 107, 53, 0.1);
           position: sticky;
@@ -28,16 +30,16 @@ export default function Contact() {
         }
 
         nav {
-          max-width: 1400px;
+          max-width: 1280px;
           margin: 0 auto;
-          padding: 1.25rem 2rem;
+          padding: 1rem 2rem;
           display: flex;
           justify-content: space-between;
           align-items: center;
         }
 
         .logo {
-          font-size: 1.4rem;
+          font-size: 1.3rem;
           font-weight: 700;
           color: #ffffff;
           text-decoration: none;
@@ -51,13 +53,13 @@ export default function Contact() {
         nav ul {
           list-style: none;
           display: flex;
-          gap: 2.5rem;
+          gap: 2rem;
         }
 
         nav a {
           text-decoration: none;
           color: #b0b0b0;
-          font-size: 0.9rem;
+          font-size: 0.85rem;
           font-weight: 500;
           letter-spacing: 0.3px;
           transition: all 0.3s ease;
@@ -70,7 +72,7 @@ export default function Contact() {
           bottom: -4px;
           left: 0;
           width: 0;
-          height: 2px;
+          height: 1px;
           background: #ff6b35;
           transition: width 0.3s ease;
         }
@@ -85,29 +87,30 @@ export default function Contact() {
 
         /* PAGE HEADER */
         .page-header {
-          background: linear-gradient(135deg, #1a3a52 0%, #0d1b2a 100%);
-          padding: 4.5rem 2rem;
+          background: linear-gradient(180deg, rgba(11, 22, 34, 1) 0%, rgba(13, 27, 42, 1) 100%);
+          padding: 4rem 2rem;
           text-align: center;
-          border-bottom: 1px solid rgba(255, 107, 53, 0.1);
+          border-bottom: 1px solid rgba(255, 107, 53, 0.05);
         }
 
         .page-header h1 {
-          font-size: 2.8rem;
-          font-weight: 700;
+          font-size: 2.5rem;
+          font-weight: 300;
           color: #ffffff;
           margin-bottom: 0.75rem;
           letter-spacing: -0.5px;
         }
 
         .page-header p {
-          color: #b0b0b0;
-          font-size: 1.05rem;
+          color: #8899a6;
+          font-size: 1rem;
           font-weight: 300;
+          letter-spacing: 0.5px;
         }
 
         /* MAIN */
         main {
-          max-width: 1400px;
+          max-width: 1280px;
           margin: 0 auto;
           padding: 4rem 2rem;
         }
@@ -121,199 +124,237 @@ export default function Contact() {
 
         /* FORM */
         .contact-form {
-          background: rgba(26, 58, 82, 0.3);
-          border: 1px solid rgba(255, 107, 53, 0.15);
-          padding: 3.5rem;
-          border-radius: 12px;
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+          background: rgba(13, 27, 42, 0.4);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          padding: 3rem;
+          border-radius: 8px;
+          backdrop-filter: blur(10px);
         }
 
         .contact-form h2 {
-          font-size: 1.6rem;
-          font-weight: 700;
+          font-size: 1.5rem;
+          font-weight: 300;
           color: #ffffff;
           margin-bottom: 2rem;
-          letter-spacing: -0.3px;
+          letter-spacing: -0.5px;
         }
 
         .form-group {
-          margin-bottom: 2rem;
+          margin-bottom: 1.5rem;
         }
 
         .form-group label {
           display: block;
-          font-weight: 600;
-          color: #ffffff;
-          margin-bottom: 0.75rem;
-          font-size: 0.95rem;
-          letter-spacing: 0.2px;
+          font-weight: 500;
+          color: #8899a6;
+          margin-bottom: 0.5rem;
+          font-size: 0.85rem;
+          letter-spacing: 0.5px;
         }
 
         .form-group input,
         .form-group textarea {
           width: 100%;
-          padding: 1rem;
-          border: 1px solid rgba(255, 107, 53, 0.2);
-          border-radius: 8px;
+          padding: 0.8rem 1rem;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 4px;
           font-family: inherit;
-          font-size: 0.95rem;
-          background: rgba(13, 27, 42, 0.5);
-          color: #e0e0e0;
+          font-size: 0.9rem;
+          background: rgba(11, 22, 34, 0.6);
+          color: #ffffff;
           transition: all 0.3s ease;
         }
 
         .form-group textarea {
           resize: vertical;
-          min-height: 140px;
+          min-height: 120px;
         }
 
         .form-group input::placeholder,
         .form-group textarea::placeholder {
-          color: #666;
+          color: #5d707f;
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
           outline: none;
           border-color: #ff6b35;
-          background: rgba(26, 58, 82, 0.4);
-          box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+          background: rgba(13, 27, 42, 0.8);
         }
 
         .btn {
-          display: inline-block;
-          padding: 1rem 2.8rem;
-          background: linear-gradient(135deg, #ff6b35 0%, #ff8c5a 100%);
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          padding: 1rem 2rem;
+          background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
           color: #ffffff;
           border: none;
-          border-radius: 50px;
+          border-radius: 4px;
           font-weight: 600;
-          font-size: 0.9rem;
+          font-size: 0.85rem;
           cursor: pointer;
           width: 100%;
           transition: all 0.3s ease;
           letter-spacing: 0.5px;
-          box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+          text-transform: uppercase;
+          box-shadow: 0 4px 15px rgba(255, 107, 53, 0.2);
         }
 
         .btn:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 12px 35px rgba(255, 107, 53, 0.4);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+          background: linear-gradient(135deg, #ff8555 0%, #ff6b35 100%);
         }
 
         /* LOCATION INFO */
         .location-info {
           display: flex;
           flex-direction: column;
-          gap: 2.5rem;
+          gap: 2rem;
         }
 
         .map-placeholder {
           width: 100%;
-          height: 340px;
-          background: linear-gradient(135deg, #1a3a52 0%, #0d1b2a 100%);
-          border-radius: 12px;
+          height: 300px;
+          background: #0d1b2a;
+          border-radius: 8px;
           display: flex;
           align-items: center;
           justify-content: center;
           color: #666;
           font-size: 0.9rem;
-          border: 1px solid rgba(255, 107, 53, 0.15);
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          overflow: hidden;
         }
 
         .location-details {
-          background: rgba(26, 58, 82, 0.3);
-          border: 1px solid rgba(255, 107, 53, 0.15);
-          padding: 3.5rem;
-          border-radius: 12px;
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+          background: rgba(13, 27, 42, 0.4);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          padding: 2.5rem;
+          border-radius: 8px;
         }
 
         .location-details h3 {
-          font-size: 1.5rem;
-          font-weight: 700;
+          font-size: 1.3rem;
+          font-weight: 300;
           color: #ffffff;
           margin-bottom: 2rem;
-          letter-spacing: -0.3px;
+          letter-spacing: -0.2px;
         }
 
         .info-item {
-          margin-bottom: 2rem;
+          margin-bottom: 1.5rem;
+          display: flex;
+          gap: 1rem;
         }
 
-        .info-item strong {
-          display: block;
+        .info-icon {
           color: #ff6b35;
-          font-weight: 700;
-          margin-bottom: 0.75rem;
-          font-size: 0.95rem;
-          letter-spacing: 0.2px;
+          flex-shrink: 0;
+          margin-top: 0.2rem;
         }
 
-        .info-item p {
+        .info-content strong {
+          display: block;
+          color: #ffffff;
+          font-weight: 600;
+          margin-bottom: 0.25rem;
+          font-size: 0.9rem;
+        }
+
+        .info-content p {
           color: #b0b0b0;
-          line-height: 2;
-          font-size: 0.95rem;
+          line-height: 1.6;
+          font-size: 0.9rem;
         }
 
         /* FOOTER */
         footer {
-          background: rgba(13, 27, 42, 0.95);
-          color: #b0b0b0;
-          padding: 3rem 2rem;
-          text-align: center;
-          font-size: 0.85rem;
-          margin-top: 3rem;
-          border-top: 1px solid rgba(255, 107, 53, 0.1);
+          background: #0b1622;
+          border-top: 1px solid rgba(255, 255, 255, 0.05);
+          padding: 4rem 2rem 2rem;
+          color: #8899a6;
+          font-size: 0.9rem;
+          margin-top: auto;
         }
 
-        footer a {
-          color: #ff6b35;
+        .footer-content {
+          max-width: 1280px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 3rem;
+          margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+          color: #ffffff;
+          font-size: 1.1rem;
+          font-weight: 600;
+          margin-bottom: 1.5rem;
+          letter-spacing: -0.2px;
+        }
+
+        .footer-col ul {
+          list-style: none;
+        }
+
+        .footer-col ul li {
+          margin-bottom: 0.8rem;
+        }
+
+        .footer-col a {
+          color: #8899a6;
           text-decoration: none;
-          margin: 0 1.5rem;
-          transition: color 0.3s ease;
+          transition: color 0.2s ease;
         }
 
-        footer a:hover {
-          color: #ff8c5a;
+        .footer-col a:hover {
+          color: #ff6b35;
+        }
+
+        .footer-bottom {
+          max-width: 1280px;
+          margin: 0 auto;
+          padding-top: 2rem;
+          border-top: 1px solid rgba(255, 255, 255, 0.05);
+          text-align: center;
+          font-size: 0.8rem;
+          color: #5d707f;
         }
 
         /* RESPONSIVE */
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
           .contact-container {
             grid-template-columns: 1fr;
+            gap: 3rem;
+          }
+          
+          .page-header {
+            padding: 3rem 1.5rem;
+          }
+        }
+
+        @media (max-width: 600px) {
+          nav {
+            padding: 1rem;
+            flex-direction: column;
+            gap: 1rem;
+          }
+
+          .logo {
+            font-size: 1.25rem;
           }
 
           nav ul {
             gap: 1.5rem;
-          }
-
-          nav a {
-            font-size: 0.85rem;
-          }
-        }
-
-        @media (max-width: 480px) {
-          nav {
-            padding: 1rem;
-          }
-
-          .logo {
-            font-size: 1.1rem;
-          }
-
-          nav ul {
-            gap: 1rem;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
           }
 
           .page-header h1 {
-            font-size: 1.8rem;
-          }
-
-          .page-header p {
-            font-size: 0.95rem;
+            font-size: 2rem;
           }
 
           main {
@@ -322,11 +363,16 @@ export default function Contact() {
 
           .contact-form,
           .location-details {
-            padding: 2rem;
+            padding: 1.5rem;
           }
 
           .map-placeholder {
             height: 240px;
+          }
+
+          .footer-content {
+            grid-template-columns: 1fr;
+            gap: 2rem;
           }
         }
       `}</style>
@@ -334,14 +380,14 @@ export default function Contact() {
       <header>
         <nav>
           <a href="/" className="logo">
-            DriveLine
+            DriveLine Motors
           </a>
           <ul>
             <li>
               <a href="/">Home</a>
             </li>
             <li>
-              <a href="/inventory">Inventory</a>
+              <a href="/inventory">Collection</a>
             </li>
             <li>
               <a href="/contact">Contact</a>
@@ -381,7 +427,7 @@ export default function Contact() {
               </div>
 
               <button type="submit" className="btn">
-                Send Message
+                <Send className="w-4 h-4" /> Send Message
               </button>
             </form>
           </div>
@@ -393,7 +439,7 @@ export default function Contact() {
                 src="https://www.google.com/maps?q=127+Riawena+Rd,+Salisbury,+QLD,+4107&output=embed"
                 width="100%"
                 height="100%"
-                style={{ border: 0, borderRadius: '12px', width: '100%', height: '100%' }}
+                style={{ border: 0, borderRadius: '8px', width: '100%', height: '100%' }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -404,31 +450,41 @@ export default function Contact() {
               <h3>Showroom & Hours</h3>
 
               <div className="info-item">
-                <strong>Location</strong>
-                <p>
-                  127 Riawena Rd, Salisbury, QLD, 4107
-                </p>
+                <MapPin className="info-icon w-5 h-5" />
+                <div className="info-content">
+                  <strong>Location</strong>
+                  <p>127 Riawena Rd, Salisbury, QLD, 4107</p>
+                </div>
               </div>
 
               <div className="info-item">
-                <strong>Phone</strong>
-                <p>(07) 3520 4080</p>
+                <Phone className="info-icon w-5 h-5" />
+                <div className="info-content">
+                  <strong>Phone</strong>
+                  <p>(07) 3520 4080</p>
+                </div>
               </div>
 
               <div className="info-item">
-                <strong>Business Hours</strong>
-                <p>
-                  Monday - Friday: 9:00 AM - 6:00 PM
-                  <br />
-                  Saturday: 10:00 AM - 5:00 PM
-                  <br />
-                  Sunday: Closed
-                </p>
+                <Clock className="info-icon w-5 h-5" />
+                <div className="info-content">
+                  <strong>Business Hours</strong>
+                  <p>
+                    Monday - Friday: 9:00 AM - 6:00 PM
+                    <br />
+                    Saturday: 10:00 AM - 5:00 PM
+                    <br />
+                    Sunday: Closed
+                  </p>
+                </div>
               </div>
 
               <div className="info-item">
-                <strong>Email</strong>
-                <p>hello@driveline-motors.com</p>
+                <Mail className="info-icon w-5 h-5" />
+                <div className="info-content">
+                  <strong>Email</strong>
+                  <p>hello@driveline-motors.com</p>
+                </div>
               </div>
             </div>
           </div>
@@ -436,10 +492,43 @@ export default function Contact() {
       </main>
 
       <footer>
-        <p>
-          &copy; 2025 DriveLine Motors. All rights reserved. | <a href="/">Home</a> <a href="/inventory">Inventory</a>{" "}
-          <a href="/contact">Contact</a>
-        </p>
+        <div className="footer-content">
+          <div className="footer-col">
+            <h4>DriveLine Motors</h4>
+            <p>
+              Premier destination for luxury and performance vehicles. 
+              Experience excellence in every mile.
+            </p>
+          </div>
+          <div className="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/inventory">Collection</a></li>
+              <li><a href="/contact">Contact Us</a></li>
+            </ul>
+          </div>
+          <div className="footer-col">
+            <h4>Contact</h4>
+            <ul>
+              <li>127 Riawena Rd</li>
+              <li>Salisbury, QLD 4107</li>
+              <li>(07) 3520 4080</li>
+              <li>hello@driveline-motors.com</li>
+            </ul>
+          </div>
+          <div className="footer-col">
+            <h4>Hours</h4>
+            <ul>
+              <li>Mon - Fri: 9am - 6pm</li>
+              <li>Sat: 10am - 5pm</li>
+              <li>Sun: Closed</li>
+            </ul>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          &copy; 2025 DriveLine Motors. All rights reserved.
+        </div>
       </footer>
     </>
   )

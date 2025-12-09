@@ -1,6 +1,20 @@
 "use client"
 
 import { useState, use } from "react"
+import { 
+  MapPin, 
+  Settings2, 
+  Fuel, 
+  Check, 
+  ClipboardList, 
+  Zap, 
+  Timer, 
+  Gauge, 
+  Calendar, 
+  Car,
+  ShieldCheck,
+  ChevronRight 
+} from "lucide-react"
 
 export default function VehicleDetails({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params)
@@ -160,53 +174,54 @@ export default function VehicleDetails({ params }: { params: Promise<{ id: strin
         }
 
         body {
-          font-family: 'Segoe UI', 'Roboto', sans-serif;
-          color: #f5f5f5;
-          background: #0d1b2a;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+          color: #e0e0e0;
+          background: #0b1622;
           line-height: 1.6;
         }
 
-
         /* HEADER & NAVIGATION */
         header {
-          background: rgba(13, 27, 42, 0.95);
-          border-bottom: 2px solid #ff6b35;
+          background: rgba(11, 22, 34, 0.95);
+          backdrop-filter: blur(10px);
+          border-bottom: 1px solid rgba(255, 107, 53, 0.1);
           position: sticky;
           top: 0;
           z-index: 100;
-          box-shadow: 0 8px 32px rgba(255, 107, 53, 0.15);
-          backdrop-filter: blur(10px);
         }
 
         nav {
-          max-width: 1600px;
+          max-width: 1280px;
           margin: 0 auto;
-          padding: 1.25rem 2rem;
+          padding: 1rem 2rem;
           display: flex;
           justify-content: space-between;
           align-items: center;
         }
 
         .logo {
-          font-size: 1.35rem;
+          font-size: 1.3rem;
           font-weight: 700;
-          color: #ff6b35;
+          color: #ffffff;
           text-decoration: none;
-          letter-spacing: 0.5px;
-          text-transform: uppercase;
+          letter-spacing: -0.5px;
+          background: linear-gradient(135deg, #ff6b35 0%, #ff8c5a 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
         }
 
         nav ul {
           list-style: none;
           display: flex;
-          gap: 2.5rem;
+          gap: 2rem;
         }
 
         nav a {
           text-decoration: none;
-          color: #f5f5f5;
-          font-size: 0.9rem;
-          font-weight: 600;
+          color: #b0b0b0;
+          font-size: 0.85rem;
+          font-weight: 500;
           letter-spacing: 0.3px;
           transition: all 0.3s ease;
           position: relative;
@@ -218,22 +233,22 @@ export default function VehicleDetails({ params }: { params: Promise<{ id: strin
           bottom: -4px;
           left: 0;
           width: 0;
-          height: 2px;
+          height: 1px;
           background: #ff6b35;
           transition: width 0.3s ease;
-        }
-
-        nav a:hover::after {
-          width: 100%;
         }
 
         nav a:hover {
           color: #ff6b35;
         }
 
+        nav a:hover::after {
+          width: 100%;
+        }
+        
         /* MAIN CONTAINER */
         main {
-          max-width: 1600px;
+          max-width: 1280px;
           margin: 0 auto;
           padding: 2rem;
         }
@@ -242,48 +257,53 @@ export default function VehicleDetails({ params }: { params: Promise<{ id: strin
         .breadcrumb {
           margin-bottom: 2rem;
           font-size: 0.85rem;
-          color: #888;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
+          color: #8899a6;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
         }
 
         .breadcrumb a {
-          color: #ff6b35;
+          color: #b0b0b0;
           text-decoration: none;
-          font-weight: 600;
           transition: color 0.3s ease;
         }
 
         .breadcrumb a:hover {
-          color: #ffa366;
+          color: #ff6b35;
+        }
+
+        .breadcrumb span {
+          color: #ffffff;
+          font-weight: 500;
         }
 
         /* IMAGE GALLERY SECTION */
         .gallery-section {
-          margin-bottom: 3rem;
+          margin-bottom: 2.5rem;
           display: grid;
-          grid-template-columns: 1fr 120px;
-          gap: 1.5rem;
+          grid-template-columns: 1fr 100px;
+          gap: 1rem;
         }
 
         .main-image {
           width: 100%;
-          height: 600px;
-          background: linear-gradient(135deg, #1a3a52 0%, #0d1b2a 100%);
-          border-radius: 12px;
+          height: 500px;
+          background: #0d1b2a;
+          border-radius: 4px;
           overflow: hidden;
           display: flex;
           align-items: center;
           justify-content: center;
           position: relative;
-          border: 2px solid rgba(255, 107, 53, 0.3);
+          border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .main-image img {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          transition: transform 0.3s ease;
+          transition: transform 0.5s ease;
         }
 
         .main-image:hover img {
@@ -294,17 +314,17 @@ export default function VehicleDetails({ params }: { params: Promise<{ id: strin
         .thumbnail-gallery {
           display: flex;
           flex-direction: column;
-          gap: 1rem;
+          gap: 0.75rem;
         }
 
         .thumbnail {
-          width: 120px;
-          height: 120px;
-          background: #1a3a52;
-          border-radius: 12px;
+          width: 100px;
+          height: 100px;
+          background: #0d1b2a;
+          border-radius: 4px;
           overflow: hidden;
           cursor: pointer;
-          border: 3px solid #333;
+          border: 1px solid rgba(255, 255, 255, 0.1);
           transition: all 0.3s ease;
           flex-shrink: 0;
         }
@@ -317,13 +337,12 @@ export default function VehicleDetails({ params }: { params: Promise<{ id: strin
 
         .thumbnail.active {
           border-color: #ff6b35;
-          box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4);
-          transform: scale(1.05);
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         .thumbnail:hover {
           border-color: #ff6b35;
-          transform: scale(1.08);
+          transform: translateY(-2px);
         }
 
         /* CONTENT GRID */
@@ -338,38 +357,37 @@ export default function VehicleDetails({ params }: { params: Promise<{ id: strin
         .details-section {
           display: flex;
           flex-direction: column;
-          gap: 3rem;
+          gap: 2.5rem;
         }
 
         /* VEHICLE HEADER */
         .vehicle-header {
-          border-bottom: 2px solid rgba(255, 107, 53, 0.2);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.05);
           padding-bottom: 2rem;
         }
 
         .vehicle-title {
-          font-size: 3rem;
+          font-size: 2.5rem;
           font-weight: 300;
           color: #ffffff;
-          margin-bottom: 0.75rem;
-          letter-spacing: -1px;
+          margin-bottom: 0.5rem;
+          letter-spacing: -0.5px;
           line-height: 1.1;
         }
 
         .vehicle-price {
-          font-size: 2.5rem;
-          font-weight: 700;
+          font-size: 2rem;
+          font-weight: 600;
           color: #ff6b35;
           margin-bottom: 1rem;
-          letter-spacing: -0.5px;
         }
 
         .vehicle-subtitle {
-          font-size: 1.05rem;
-          color: #aaa;
+          font-size: 0.95rem;
+          color: #8899a6;
           margin-bottom: 1.5rem;
           display: flex;
-          gap: 2rem;
+          gap: 1.5rem;
           flex-wrap: wrap;
         }
 
@@ -381,7 +399,7 @@ export default function VehicleDetails({ params }: { params: Promise<{ id: strin
 
         .status-badges {
           display: flex;
-          gap: 1rem;
+          gap: 0.75rem;
           flex-wrap: wrap;
         }
 
@@ -389,134 +407,130 @@ export default function VehicleDetails({ params }: { params: Promise<{ id: strin
           display: inline-flex;
           align-items: center;
           gap: 0.5rem;
-          background: rgba(255, 107, 53, 0.1);
+          background: rgba(255, 107, 53, 0.05);
           color: #ff6b35;
-          padding: 0.625rem 1.5rem;
-          border-radius: 25px;
-          font-size: 0.8rem;
+          padding: 0.5rem 1rem;
+          border-radius: 2px;
+          font-size: 0.75rem;
           font-weight: 600;
           letter-spacing: 0.5px;
           text-transform: uppercase;
-          border: 1px solid rgba(255, 107, 53, 0.3);
+          border: 1px solid rgba(255, 107, 53, 0.2);
         }
 
         .status-badge.premium {
-          background: linear-gradient(135deg, rgba(255, 107, 53, 0.2) 0%, rgba(255, 107, 53, 0.1) 100%);
-          color: #ff6b35;
-          border: 1px solid rgba(255, 107, 53, 0.4);
+          background: rgba(255, 107, 53, 0.1);
+          border: 1px solid rgba(255, 107, 53, 0.3);
         }
 
         /* DESCRIPTION */
         .description {
-          font-size: 1.05rem;
-          line-height: 1.9;
-          color: #ccc;
+          font-size: 1rem;
+          line-height: 1.8;
+          color: #b0b0b0;
+          font-weight: 300;
         }
 
         /* SPECS GRID - ENHANCED */
         .specs-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 2rem;
-          padding: 2.5rem;
-          background: linear-gradient(135deg, rgba(26, 58, 82, 0.3) 0%, rgba(13, 27, 42, 0.5) 100%);
-          border-radius: 12px;
-          border: 2px solid rgba(255, 107, 53, 0.2);
+          gap: 1.5rem;
+          padding: 2rem;
+          background: rgba(13, 27, 42, 0.4);
+          border-radius: 8px;
+          border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .spec-item {
           display: flex;
           flex-direction: column;
-          gap: 0.75rem;
+          gap: 0.5rem;
           text-align: center;
-          padding: 1.5rem;
-          background: rgba(255, 107, 53, 0.05);
-          border-radius: 8px;
-          border: 1px solid rgba(255, 107, 53, 0.1);
+          padding: 1rem;
+          background: rgba(11, 22, 34, 0.5);
+          border-radius: 4px;
+          border: 1px solid rgba(255, 255, 255, 0.03);
           transition: all 0.3s ease;
         }
 
         .spec-item:hover {
-          background: rgba(255, 107, 53, 0.1);
-          transform: translateY(-4px);
-          border-color: rgba(255, 107, 53, 0.3);
+          background: rgba(13, 27, 42, 0.8);
+          transform: translateY(-2px);
+          border-color: rgba(255, 107, 53, 0.2);
         }
 
         .spec-icon {
-          font-size: 2rem;
+          font-size: 1.5rem;
           color: #ff6b35;
+          margin-bottom: 0.25rem;
         }
 
         .spec-label {
-          font-size: 0.75rem;
-          color: #888;
+          font-size: 0.7rem;
+          color: #8899a6;
           text-transform: uppercase;
-          letter-spacing: 1.2px;
-          font-weight: 700;
+          letter-spacing: 1px;
+          font-weight: 600;
         }
 
         .spec-value {
-          font-size: 1.35rem;
+          font-size: 1.1rem;
           color: #ffffff;
-          font-weight: 600;
-          line-height: 1.3;
+          font-weight: 500;
         }
 
         /* FEATURES */
         .features-section h3,
         .history-section h3 {
-          font-size: 1.75rem;
-          font-weight: 600;
+          font-size: 1.4rem;
+          font-weight: 300;
           color: #ffffff;
-          margin-bottom: 2rem;
-          letter-spacing: -0.5px;
+          margin-bottom: 1.5rem;
+          letter-spacing: -0.2px;
         }
 
         .features-grid {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          gap: 1.5rem;
-          margin-bottom: 3rem;
+          gap: 1rem;
+          margin-bottom: 2rem;
         }
 
         .feature-item {
           display: flex;
-          align-items: flex-start;
-          gap: 1rem;
-          padding: 1.5rem;
-          background: rgba(26, 58, 82, 0.3);
-          border-radius: 8px;
-          border-left: 4px solid #ff6b35;
-          transition: all 0.3s ease;
-          border: 2px solid rgba(255, 107, 53, 0.2);
-          border-left: 4px solid #ff6b35;
+          align-items: center;
+          gap: 0.75rem;
+          padding: 1rem;
+          background: rgba(13, 27, 42, 0.3);
+          border-radius: 4px;
+          border-left: 2px solid #ff6b35;
+          transition: all 0.2s ease;
+          border: 1px solid rgba(255, 255, 255, 0.03);
+          border-left: 2px solid #ff6b35;
         }
 
         .feature-item:hover {
-          background: rgba(26, 58, 82, 0.5);
-          transform: translateX(8px);
-          box-shadow: 0 8px 24px rgba(255, 107, 53, 0.15);
-          border-color: rgba(255, 107, 53, 0.4);
+          background: rgba(13, 27, 42, 0.6);
+          transform: translateX(4px);
         }
 
         .feature-icon {
           color: #ff6b35;
           font-weight: bold;
-          font-size: 1.3rem;
+          font-size: 1rem;
           flex-shrink: 0;
-          margin-top: 2px;
         }
 
         .feature-text {
-          color: #ccc;
-          font-size: 0.95rem;
-          line-height: 1.5;
+          color: #b0b0b0;
+          font-size: 0.9rem;
         }
 
         /* HISTORY SECTION */
         .history-section {
           padding-top: 2rem;
-          border-top: 2px solid rgba(255, 107, 53, 0.2);
+          border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .history-grid {
@@ -527,31 +541,30 @@ export default function VehicleDetails({ params }: { params: Promise<{ id: strin
 
         .history-item {
           padding: 1.5rem;
-          background: rgba(26, 58, 82, 0.3);
-          border-radius: 8px;
-          border: 2px solid rgba(255, 107, 53, 0.2);
+          background: rgba(13, 27, 42, 0.3);
+          border-radius: 4px;
+          border: 1px solid rgba(255, 255, 255, 0.05);
           transition: all 0.3s ease;
         }
 
         .history-item:hover {
-          background: rgba(26, 58, 82, 0.5);
-          border-color: rgba(255, 107, 53, 0.4);
-          transform: translateY(-4px);
+          background: rgba(13, 27, 42, 0.6);
+          border-color: rgba(255, 107, 53, 0.2);
         }
 
         .history-item h4 {
-          font-size: 0.85rem;
+          font-size: 0.75rem;
           color: #ff6b35;
           text-transform: uppercase;
           letter-spacing: 1px;
-          margin-bottom: 0.75rem;
+          margin-bottom: 0.5rem;
           font-weight: 700;
         }
 
         .history-item p {
-          font-size: 1rem;
-          color: #f5f5f5;
-          font-weight: 500;
+          font-size: 0.95rem;
+          color: #e0e0e0;
+          font-weight: 400;
         }
 
         /* RIGHT COLUMN - SIDEBAR */
@@ -565,37 +578,28 @@ export default function VehicleDetails({ params }: { params: Promise<{ id: strin
         }
 
         .sidebar-card {
-          background: rgba(26, 58, 82, 0.4);
+          background: rgba(13, 27, 42, 0.4);
           padding: 2rem;
-          border-radius: 12px;
-          border: 2px solid rgba(255, 107, 53, 0.2);
+          border-radius: 8px;
+          border: 1px solid rgba(255, 255, 255, 0.05);
           backdrop-filter: blur(10px);
-          transition: all 0.3s ease;
-        }
-
-        .sidebar-card:hover {
-          border-color: rgba(255, 107, 53, 0.4);
-          background: rgba(26, 58, 82, 0.6);
         }
 
         .sidebar-card h4 {
-          font-size: 1.1rem;
-          font-weight: 700;
-          color: #ffffff;
-          margin-bottom: 1.75rem;
-          letter-spacing: -0.3px;
-          text-transform: uppercase;
           font-size: 0.9rem;
-          letter-spacing: 1px;
+          font-weight: 700;
           color: #ff6b35;
+          margin-bottom: 1.5rem;
+          letter-spacing: 1px;
+          text-transform: uppercase;
         }
 
         .info-item {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 1rem 0;
-          border-bottom: 1px solid rgba(255, 107, 53, 0.1);
+          padding: 0.75rem 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .info-item:last-child {
@@ -603,99 +607,130 @@ export default function VehicleDetails({ params }: { params: Promise<{ id: strin
         }
 
         .info-label {
-          color: #888;
+          color: #8899a6;
           font-size: 0.85rem;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-          font-weight: 600;
+          font-weight: 500;
         }
 
         .info-value {
-          color: #f5f5f5;
-          font-weight: 700;
-          font-size: 1rem;
+          color: #ffffff;
+          font-weight: 600;
+          font-size: 0.95rem;
         }
 
         /* CTA BUTTONS */
         .cta-buttons {
           display: flex;
           flex-direction: column;
-          gap: 1rem;
+          gap: 0.75rem;
         }
 
         .btn {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          gap: 0.75rem;
-          padding: 1.1rem 1.5rem;
+          gap: 0.5rem;
+          padding: 1rem 1.5rem;
           background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
           color: #ffffff;
           text-decoration: none;
-          border-radius: 8px;
-          font-weight: 700;
-          font-size: 0.9rem;
+          border-radius: 4px;
+          font-weight: 600;
+          font-size: 0.85rem;
           border: none;
           cursor: pointer;
           transition: all 0.3s ease;
           letter-spacing: 0.5px;
           text-align: center;
           text-transform: uppercase;
-          box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+          box-shadow: 0 4px 15px rgba(255, 107, 53, 0.2);
         }
 
         .btn:hover {
           background: linear-gradient(135deg, #ff8555 0%, #ff6b35 100%);
-          transform: translateY(-3px);
-          box-shadow: 0 12px 30px rgba(255, 107, 53, 0.4);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
         }
 
         .btn-secondary {
           background: transparent;
           color: #ff6b35;
-          border: 2px solid #ff6b35;
+          border: 1px solid #ff6b35;
           box-shadow: none;
         }
 
         .btn-secondary:hover {
-          background: rgba(255, 107, 53, 0.1);
+          background: rgba(255, 107, 53, 0.05);
           border-color: #ffa366;
           color: #ffa366;
         }
 
         .btn-outline {
           background: transparent;
-          color: #ff6b35;
-          border: 2px solid #ff6b35;
+          color: #8899a6;
+          border: 1px solid rgba(255, 255, 255, 0.1);
           box-shadow: none;
         }
 
         .btn-outline:hover {
-          background: rgba(255, 107, 53, 0.2);
-          border-color: #ffa366;
-          color: #ffa366;
+          background: rgba(255, 255, 255, 0.05);
+          border-color: #ffffff;
+          color: #ffffff;
         }
 
         /* FOOTER */
         footer {
-          background: #0d1b2a;
-          color: #f5f5f5;
-          padding: 3rem 2rem;
-          text-align: center;
-          font-size: 0.85rem;
+          background: #0b1622;
+          border-top: 1px solid rgba(255, 255, 255, 0.05);
+          padding: 4rem 2rem 2rem;
+          color: #8899a6;
+          font-size: 0.9rem;
           margin-top: 5rem;
-          border-top: 2px solid rgba(255, 107, 53, 0.2);
         }
 
-        footer a {
-          color: #ff6b35;
+        .footer-content {
+          max-width: 1280px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 3rem;
+          margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+          color: #ffffff;
+          font-size: 1.1rem;
+          font-weight: 600;
+          margin-bottom: 1.5rem;
+          letter-spacing: -0.2px;
+        }
+
+        .footer-col ul {
+          list-style: none;
+        }
+
+        .footer-col ul li {
+          margin-bottom: 0.8rem;
+        }
+
+        .footer-col a {
+          color: #8899a6;
           text-decoration: none;
-          margin: 0 1.5rem;
-          transition: color 0.3s ease;
+          transition: color 0.2s ease;
         }
 
-        footer a:hover {
-          color: #ffa366;
+        .footer-col a:hover {
+          color: #ff6b35;
+        }
+
+        .footer-bottom {
+          max-width: 1280px;
+          margin: 0 auto;
+          padding-top: 2rem;
+          border-top: 1px solid rgba(255, 255, 255, 0.05);
+          text-align: center;
+          font-size: 0.8rem;
+          color: #5d707f;
         }
 
         /* RESPONSIVE */
@@ -710,25 +745,13 @@ export default function VehicleDetails({ params }: { params: Promise<{ id: strin
           }
 
           .specs-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+
+        @media (max-width: 900px) {
+          .specs-grid {
             grid-template-columns: repeat(2, 1fr);
-          }
-
-          .features-grid {
-            grid-template-columns: 1fr;
-          }
-
-          .gallery-section {
-            grid-template-columns: 1fr;
-          }
-
-          .thumbnail-gallery {
-            flex-direction: row;
-            overflow-x: auto;
-            padding-bottom: 0.5rem;
-          }
-
-          .thumbnail {
-            flex-shrink: 0;
           }
         }
 
@@ -749,11 +772,6 @@ export default function VehicleDetails({ params }: { params: Promise<{ id: strin
             height: 400px;
           }
 
-          .specs-grid {
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-          }
-
           .history-grid {
             grid-template-columns: 1fr;
           }
@@ -771,7 +789,22 @@ export default function VehicleDetails({ params }: { params: Promise<{ id: strin
           }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 600px) {
+          nav {
+            padding: 1rem;
+            flex-direction: column;
+            gap: 1rem;
+          }
+
+          .logo {
+            font-size: 1.25rem;
+          }
+
+          nav ul {
+            gap: 1.5rem;
+            font-size: 0.9rem;
+          }
+
           main {
             padding: 1rem;
           }
@@ -793,29 +826,39 @@ export default function VehicleDetails({ params }: { params: Promise<{ id: strin
           }
 
           .specs-grid {
+            grid-template-columns: 1fr;
             padding: 1.5rem;
             gap: 1rem;
+          }
+
+          .features-grid {
+            grid-template-columns: 1fr;
           }
 
           .feature-item {
             padding: 1rem;
           }
 
-          nav {
-            padding: 1rem;
-          }
-
-          .logo {
-            font-size: 1.15rem;
-          }
-
           .gallery-section {
+            grid-template-columns: 1fr;
             gap: 0.75rem;
+          }
+
+          .thumbnail-gallery {
+            flex-direction: row;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
           }
 
           .thumbnail {
             width: 80px;
             height: 80px;
+            flex-shrink: 0;
+          }
+
+          .footer-content {
+            grid-template-columns: 1fr;
+            gap: 2rem;
           }
         }
       `}</style>
@@ -841,7 +884,11 @@ export default function VehicleDetails({ params }: { params: Promise<{ id: strin
 
       <main>
         <div className="breadcrumb">
-          <a href="/">Home</a> / <a href="/inventory">Inventory</a> / {vehicle.year} {vehicle.make} {vehicle.model}
+          <a href="/">Home</a> 
+          <ChevronRight className="w-4 h-4 text-[#5d707f]" />
+          <a href="/inventory">Collection</a> 
+          <ChevronRight className="w-4 h-4 text-[#5d707f]" />
+          <span>{vehicle.year} {vehicle.make} {vehicle.model}</span>
         </div>
 
         {/* GALLERY */}
@@ -874,13 +921,13 @@ export default function VehicleDetails({ params }: { params: Promise<{ id: strin
               </h1>
               <div className="vehicle-price">${vehicle.price.toLocaleString()}</div>
               <div className="vehicle-subtitle">
-                <span className="subtitle-item">📍 {vehicle.color}</span>
-                <span className="subtitle-item">⚙️ {vehicle.transmission}</span>
-                <span className="subtitle-item">🛢️ {vehicle.fuel}</span>
+                <span className="subtitle-item"><MapPin className="w-4 h-4 text-[#ff6b35]" /> {vehicle.color}</span>
+                <span className="subtitle-item"><Settings2 className="w-4 h-4 text-[#ff6b35]" /> {vehicle.transmission}</span>
+                <span className="subtitle-item"><Fuel className="w-4 h-4 text-[#ff6b35]" /> {vehicle.fuel}</span>
               </div>
               <div className="status-badges">
-                <span className="status-badge premium">✓ {vehicle.condition}</span>
-                <span className="status-badge">📋 {vehicle.warranty}</span>
+                <span className="status-badge premium"><Check className="w-3 h-3 mr-1" /> {vehicle.condition}</span>
+                <span className="status-badge"><ClipboardList className="w-3 h-3 mr-1" /> {vehicle.warranty}</span>
               </div>
             </div>
 
@@ -889,32 +936,32 @@ export default function VehicleDetails({ params }: { params: Promise<{ id: strin
             {/* SPECS GRID */}
             <div className="specs-grid">
               <div className="spec-item">
-                <div className="spec-icon">⚡</div>
+                <div className="flex justify-center"><Zap className="spec-icon" /></div>
                 <div className="spec-label">Horsepower</div>
                 <div className="spec-value">{vehicle.horsepower} HP</div>
               </div>
               <div className="spec-item">
-                <div className="spec-icon">🚗</div>
+                <div className="flex justify-center"><Timer className="spec-icon" /></div>
                 <div className="spec-label">0-60 Acceleration</div>
                 <div className="spec-value">{vehicle.accel}</div>
               </div>
               <div className="spec-item">
-                <div className="spec-icon">🛣️</div>
+                <div className="flex justify-center"><Fuel className="spec-icon" /></div>
                 <div className="spec-label">Range / MPG</div>
                 <div className="spec-value">{vehicle.fuel === "Electric" ? vehicle.range : vehicle.mpg}</div>
               </div>
               <div className="spec-item">
-                <div className="spec-icon">📊</div>
+                <div className="flex justify-center"><Gauge className="spec-icon" /></div>
                 <div className="spec-label">Kilometer</div>
                 <div className="spec-value">{vehicle.mileage.toLocaleString()} km</div>
               </div>
               <div className="spec-item">
-                <div className="spec-icon">📅</div>
+                <div className="flex justify-center"><Calendar className="spec-icon" /></div>
                 <div className="spec-label">Year</div>
                 <div className="spec-value">{vehicle.year}</div>
               </div>
               <div className="spec-item">
-                <div className="spec-icon">🏎️</div>
+                <div className="flex justify-center"><Car className="spec-icon" /></div>
                 <div className="spec-label">Body Type</div>
                 <div className="spec-value">{vehicle.bodyType}</div>
               </div>
@@ -926,7 +973,7 @@ export default function VehicleDetails({ params }: { params: Promise<{ id: strin
               <div className="features-grid">
                 {vehicle.features.map((feature: string, index: number) => (
                   <div key={index} className="feature-item">
-                    <div className="feature-icon">✓</div>
+                    <Check className="feature-icon" />
                     <div className="feature-text">{feature}</div>
                   </div>
                 ))}
@@ -996,11 +1043,42 @@ export default function VehicleDetails({ params }: { params: Promise<{ id: strin
       </main>
 
       <footer>
-        <p>&copy; 2025 DriveLine Motors. All rights reserved.</p>
-        <div>
-          <a href="/">Home</a>
-          <a href="/inventory">Inventory</a>
-          <a href="/contact">Contact</a>
+        <div className="footer-content">
+          <div className="footer-col">
+            <h4>DriveLine Motors</h4>
+            <p>
+              Premier destination for luxury and performance vehicles. 
+              Experience excellence in every mile.
+            </p>
+          </div>
+          <div className="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/inventory">Collection</a></li>
+              <li><a href="/contact">Contact Us</a></li>
+            </ul>
+          </div>
+          <div className="footer-col">
+            <h4>Contact</h4>
+            <ul>
+              <li>127 Riawena Rd</li>
+              <li>Salisbury, QLD 4107</li>
+              <li>(07) 3520 4080</li>
+              <li>hello@driveline-motors.com</li>
+            </ul>
+          </div>
+          <div className="footer-col">
+            <h4>Hours</h4>
+            <ul>
+              <li>Mon - Fri: 9am - 6pm</li>
+              <li>Sat: 10am - 5pm</li>
+              <li>Sun: Closed</li>
+            </ul>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          &copy; 2025 DriveLine Motors. All rights reserved.
         </div>
       </footer>
     </>
